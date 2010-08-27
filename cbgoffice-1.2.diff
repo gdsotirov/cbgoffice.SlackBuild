@@ -1,0 +1,48 @@
+# Fix compilation error with higher versions of gcc and system headers
+
+diff -N -r -U 3 cbgoffice-1.2-orig/src/main.cpp cbgoffice-1.2/src/main.cpp
+--- cbgoffice-1.2-orig/src/main.cpp	2004-12-04 21:29:14.000000000 +0200
++++ cbgoffice-1.2/src/main.cpp	2010-08-27 20:41:04.000000000 +0300
+@@ -24,6 +24,8 @@
+ * $Id: cbgoffice-1.2.diff,v 1.1 2010/08/27 17:46:07 gsotirov Exp $
+ */
+ 
++#include <cstdlib>
++#include <cstring>
+ 
+ #include "config.h"
+ #include "properties.h"
+diff -N -r -U 3 cbgoffice-1.2-orig/src/translator.cpp cbgoffice-1.2/src/translator.cpp
+--- cbgoffice-1.2-orig/src/translator.cpp	2004-12-04 21:30:57.000000000 +0200
++++ cbgoffice-1.2/src/translator.cpp	2010-08-27 20:39:17.000000000 +0300
+@@ -20,7 +20,7 @@
+ *************************************************************************/
+ 
+ 
+-#include <string.h>
++#include <cstring>
+ #include <ctype.h>
+ 
+ #include "database.h"
+@@ -295,7 +295,8 @@
+ 
+ char *Translator::transformResult(const char *result) {
+ 	int j, i, m, n, u;
+-	char *b, *pu;
++	char *b;
++	const char *pu;
+ 	char c;
+ 	strcpy(dataBuffer2, result);
+ 	if ((advancedSearchState) && (advancedSearchHighlight)) {
+diff -N -r -U 3 cbgoffice-1.2-orig/src/translator_manager.cpp cbgoffice-1.2/src/translator_manager.cpp
+--- cbgoffice-1.2-orig/src/translator_manager.cpp	2004-12-04 21:30:53.000000000 +0200
++++ cbgoffice-1.2/src/translator_manager.cpp	2010-08-27 20:40:00.000000000 +0300
+@@ -22,7 +22,7 @@
+ 
+ #include <sys/types.h>
+ #include <dirent.h>
+-#include <string>
++#include <cstring>
+ #include <iostream>
+ #include <algorithm>
+ 
