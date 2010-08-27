@@ -1,11 +1,11 @@
-cbgoffice: CBGOffice - A command line interface to BG Office
+cbgoffice: CBGOffice (A console dictionary utilty)
 cbgoffice:
-cbgoffice: CBGOffice is the command line interface to the English<=>Bulgarian
-cbgoffice: dictionary from BG Office.
+cbgoffice: CBGOffice is the command line interface to the dual
+cbgoffice: English <-> Bulgarian dictionary from BG Office.
 cbgoffice:
+cbgoffice: Visit BGOffice at http://bgoffice.sourceforge.net/
 cbgoffice:
 cbgoffice:
 cbgoffice:
 cbgoffice:
 cbgoffice: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
-cbgoffice:
